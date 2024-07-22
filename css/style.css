@@ -1,0 +1,144 @@
+:root {
+    --text-color: #ffffff;
+    --bg-url: url("/img/Background.svg");
+    --stroke-color: rgba(255,255,255,0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover: rgba(255, 255, 255, 0.5);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+    --switch-img: url(/img/moon-stars.svg);
+    --avatar-img: url("/img/avatar-dark.svg")
+}
+
+.light {
+    --text-color: black;
+    --bg-url: url("/img/bg-mobile-light.svg");
+    --stroke-color: rgba(0,0,0, 0.5);
+    --surface-color: rgba(0,0,0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(0,0,0, 0.1);
+    --switch-img: url("/img/sun.svg");
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter';
+    color: var(--text-color);
+}
+
+body {
+    background-image: var(--bg-url);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main {
+    width: 360px;
+    margin: 0 auto;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    padding: 24px;
+}
+
+img:nth-child(1) {
+    max-width: 112px;
+    max-height: 111px;
+}
+
+.switch {
+    padding: 24px 0;
+    position: relative;
+    width: 65px;
+    margin: 4px auto;
+}
+
+.switch button{
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-img) no-repeat center;  
+    border: 0;
+    border-radius: 50%;
+
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.light .switch button {
+    right: 0;
+    left: initial;
+}
+
+.switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 9999px;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 16px 24px;
+
+    font-weight: 500;
+    text-decoration: none;
+
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 8px;
+    backdrop-filter: blur(4px);
+
+    transition: background .3s;
+}
+
+ul li a:hover {
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
+    backdrop-filter: blur(4px);
+}
+
+.social-media {
+    padding: 24px 0;
+    display: flex;
+    justify-content: center;
+    
+    font-size: 24px;
+}
+
+.social-media a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+
+.social-media a:hover {
+    background: var(--highlight-color);
+    border-radius: 50%;
+}
+
+footer {
+    padding: 24px 0;
+    text-align: center;
+    font-size: 14px;
+}
